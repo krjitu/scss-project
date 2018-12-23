@@ -1,0 +1,41 @@
+//body background color
+$body-bg-color: #ececec;
+
+//base font-face source path
+$base-font-path: "../assets/font/";
+
+//default font-size (in px)
+$base-font-size: 10;
+
+//default font-family
+$base-font-family: forza-book;
+
+//available font-faces
+$font-face-values: (forza-light: Forza-Light, forza-medium: Forza-Medium, forza-book: Forza-Book, aaux-pro: AauxPro, aaux-pro-light: AauxPro-Light, aaux-pro-bold: AauxPro-Bold);
+
+//available font formats
+$font-formats: (eot: embedded-opentype, woff: woff, ttf: truetype);
+
+//multipurpose 0's, 1's & 2's
+$base-values: (0, 1, 2);
+
+//available width and height values in percentage
+$percentage-values: (33: 33.33, 66: 66.66, 1: 1, 5: 5, 10: 10, 15: 15, 20: 20, 25: 25, 30: 30, 35: 35, 40: 40, 45: 45, 50: 50, 55: 55, 60: 60, 65: 65, 70: 70, 75: 75, 80: 80, 85: 85, 90: 90, 95: 95, 100: 100);
+
+//available padding and margin values
+$pad-mar-values: (2, 3, 4, 5, 6, 8, 12, 16, 20, 24, 36);
+
+//available space side values
+$elem-sides: (all: all, v: vertical, h: horizontal, t: top, r: right, b: bottom, l: left);
+
+//available flex justify-content values for containers
+$flex-jc-values: (start: flex-start, end: flex-end, center: center, sb: space-between, sa: space-around, inherit: inherit);
+
+//available flex align-items values for containers & align-self values for flex children
+$flex-ai-as-values: (start: flex-start, end: flex-end, center: center, stretch: stretch, base: baseline, inherit: inherit);
+
+//available flex-direction values
+$flex-direction-values: (row: row, row-r: row-reverse, col: column, col-r: column-reverse);
+
+//available flex-wrap values
+$flex-wrap-values: (w: wrap, wr: wrap-reverse, n: nowrap);

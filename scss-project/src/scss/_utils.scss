@@ -1,0 +1,21 @@
+/*=utility functions=*/
+@function genFontSrc($path, $file-name, $format-list){
+  $src: null;
+  $src-ie: null;
+  $result: ();
+  @each $key, $val in $format-list{
+    $url: unquote("url('#{$path}#{$file-name}.#{$key}')");
+    $format: unquote("format('#{$val}')");
+    @if ($key == eot){
+      $src-ie: $url;
+    } @else{
+      $src: append($src, (append($url, $format, space)), comma);
+    }
+    @if not($src-ie) {
+      $result: ($src);
+    } @else{
+      $result: (($src-ie), ($src));
+    }
+  }
+  @return $result;
+}

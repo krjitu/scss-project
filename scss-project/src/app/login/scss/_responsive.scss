@@ -1,0 +1,13 @@
+/* responsive media queries */
+
+@media all and (max-device-width: 639px) {
+    app-header {
+        display: none;
+    }
+}
+
+@media all and (min-device-width:640px) {
+    .login-header-right-text {
+        display: none;
+    }
+}

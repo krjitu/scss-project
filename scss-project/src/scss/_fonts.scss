@@ -1,0 +1,8 @@
+//font faces declarations
+@each $font-name, $file-name in $font-face-values{
+  @include font-face($font-name){
+    @each $src in genFontSrc($base-font-path, $file-name, $font-formats){
+      src: $src;
+    }
+  }
+}

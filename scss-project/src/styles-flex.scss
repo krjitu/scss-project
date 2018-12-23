@@ -1,0 +1,153 @@
+/*=imports=*/
+
+@import "scss/base";
+
+/* ===== media queries start ===== */
+
+
+/* Smartphones (portrait and landscape) */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    html,
+    body {
+        font-size: 10px !important;
+    }
+    .solution-sm,
+    .solution-lg {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 100%;
+        min-width: 100%;
+    }
+}
+
+@media only screen and (min-device-width: 640px) and (max-device-width: 960px) {
+    html,
+    body {
+        font-size: 11px !important;
+    }
+    .solution-sm,
+    .solution-lg {
+        flex-grow: 1 !important;
+        flex-shrink: 0 !important;
+        max-width: 50% !important;
+    }
+    .solution-sm {
+        flex-basis: 33% !important;
+    }
+}
+
+
+/* ===== media queries end ===== */
+
+
+/*===== document start =====*/
+
+* {
+    &,
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+html,
+body {
+    @include min-h(100, vh);
+    @include mar(0);
+    @include pad(0);
+}
+
+html {
+    @include font($base-font-family, $base-font-size, px);
+}
+
+body {
+    @include bg-color($body-bg-color);
+}
+
+app-root {
+    @include height(100, %);
+}
+
+.sa-red {
+    color: #db2022 !important;
+}
+
+.sa-teal {
+    color: #82c6ce !important;
+}
+
+.sa-green {
+    color: #cee040 !important;
+}
+
+
+/*===== document end =====*/
+
+
+/*===== flex-container start =====*/
+
+.container {
+    @include max-w(100, %);
+    @include flex();
+}
+
+//no outline
+.no-outline {
+    &,
+    & * {
+        outline: 0;
+    }
+}
+
+//start fix for bootstrap dropdown - remove after removing bootstrap dropdown
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  z-index: 99;
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  top: 100%;
+  @include mar(0);
+  @include pad(0);
+  @include min-w(100); //dropdown-item
+  background-color: #fff;
+  >li.dropdown-item {
+    @include pad(4);
+    .item-container{
+      @include flex();
+    }
+  }
+}
+
+.open {
+  .dropdown-menu {
+    @include flex(col);
+  }
+}
+
+//end fix for bootstrap dropdown - remove after removing bootstrap dropdown
+
+.highcharts-legend-item-hidden {
+    opacity: 0.4;
+}
+
+.highcharts-line-series.highcharts-legend-item .highcharts-point {
+    display: none;
+}
+
+.no-data {
+    @include width(100);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    @include color (#cd5c5c);
+}
+
+
+
+

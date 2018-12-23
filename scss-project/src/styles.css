@@ -1,0 +1,510 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #ececec !important;
+}
+
+.loader {
+    border: 14px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 14px solid #ff9933;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.small-loader {
+  /*border: 8px solid #f3f3f3;*/
+  border-radius: 50%;
+  border-top: 8px solid #008b98;
+  width: 30px;
+  height: 30px;
+  margin-top: -25px;
+  margin-left: -25px;
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 100%;
+  transform: translate(-50%, -50%);
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.no-data-found {
+  position: absolute;
+  font-size: 15px;
+  color: red;
+  left: 40%;
+  width: 20%;
+  text-align: center;
+  top: 50%;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.pagination-sm>li>a {
+    color: #869596;
+    background-color: transparent;
+    border: none;
+}
+
+.pagination>li>a:hover {
+    color: #869596;
+    background-color: #d7d7d7;
+    border: #d7d7d7;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:hover {
+    background-color: #869596;
+    border-color: #869596;
+}
+
+.pagination>.disabled>a,
+.pagination>.disabled>a:hover {
+    background-color: transparent;
+    border: none;
+}
+
+.nvd3.nv-pie path {
+    fill-opacity: 1 !important;
+}
+
+
+/*.nv-bar {
+    width: 28px !important;
+}*/
+
+
+/*.nvd3.nv-bar {
+    width: 28px;
+}*/
+
+.nv-x text {
+    font-size: 15px;
+    fill: #4a6062;
+}
+
+.nv-y text {
+    font-size: 12px;
+}
+
+.nv-x2 {
+    display: none;
+}
+
+.nv-y2 {
+    display: none;
+}
+
+#xAxis .tick line {
+    visibility: hidden;
+}
+
+.tick text {
+    text-anchor: end;
+}
+
+
+/* app css stylesheet */
+
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
+
+.menu:before {
+    content: "[";
+}
+
+.menu:after {
+    content: "]";
+}
+
+.menu>li {
+    display: inline;
+}
+
+.menu>li+li:before {
+    content: "|";
+    padding-right: 0.3em;
+}
+
+.nav-list {
+    margin-top: 100px;
+}
+
+.nav-list>li>a {
+    color: #000;
+    font-size: 15px;
+}
+
+.nav-list>li>a:hover {
+    color: #fff;
+    background: #008998;
+}
+
+.blueNav {
+    border-top-right-radius: 3%;
+    border-bottom-right-radius: 3%;
+    background: #008998;
+    color: #ffffff;
+    height: 550px;
+}
+
+.panel-footer {
+    background: #bed600;
+}
+
+.active {
+    color: #fff;
+}
+
+.panel-body {
+    background: #f8f8f8;
+    position: relative;
+}
+
+.charts {
+    width: 82%;
+}
+
+.para-title {
+    color: #008998;
+}
+
+.para__content {
+    float: left;
+    padding-bottom: 2%;
+    font-size: 12px;
+    width: 50%;
+}
+
+.para__content__digit {
+    font-size: 3em;
+    margin-top: -6%;
+}
+
+.progress {
+    display: block;
+}
+
+.dotFloater {
+    margin-top: 3%;
+}
+
+.InteliDishLiveDashBoard {
+    margin-top: 50px;
+}
+
+.u-click-pointer {
+    cursor: pointer;
+}
+
+.u-rounded-Btn {
+    border-radius: 30px 30px 30px 30px;
+}
+
+.u-underline {
+    border-bottom: 1px solid #4FA582 !important;
+}
+
+.u-border-none {
+    border: none;
+}
+
+.u-center-text {
+    text-align: center;
+}
+
+.u-left-text {
+    text-align: left;
+}
+
+.u-right-text {
+    text-align: right;
+}
+
+.u-capitalize-text {
+    text-transform: capitalize;
+}
+.u-uppercase {
+    text-transform: uppercase;
+}
+
+
+/**
+** dropdown nested list
+**/
+
+.dropdown button {
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+}
+
+
+/*.dropdown-menu {
+    height: 200px !important;
+    overflow: hidden !important;
+    overflow-y: scroll !important;
+}*/
+
+.nv-bar text {
+    display: none;
+}
+
+.nv-x .tick line {
+    display: none;
+}
+
+.nv-axislabel {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+
+.gm-style .gm-style-iw+div {
+    display: none;
+}
+
+.gm-style div {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.gm-style .gm-style-iw+div {
+    display: none !important;
+}
+
+
+/*hide yaxis line*/
+
+.nv-y path {
+    display: none !important;
+}
+
+.abc {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.highcharts-yaxis text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000 !important;
+    fill: #000000 !important;
+}
+
+
+/* date range selector*/
+
+.daterangepicker.ltr .ranges {
+    float: right !important;
+}
+
+.daterangepicker {
+    position: absolute;
+    color: #111;
+    background: #fff;
+    border-radius: 4px;
+    padding: 4px;
+    margin-top: 1px;
+    top: 279px !important;
+    left: auto;
+    width: 500px !important;
+    right: 10px !important;
+}
+
+.daterangepicker:after,
+.daterangepicker:before {
+    position: absolute;
+    display: inline-block;
+    content: '';
+}
+
+.daterangepicker.opensright:before {
+    left: 90% !important;
+}
+
+.daterangepicker.opensright:after {
+    left: 90% !important;
+}
+
+#dateRangeSelector {
+    display: block;
+    border: none;
+    color: #fff;
+    float: right;
+    padding: 5px;
+    background-color: #fbebc5;
+}
+
+.highcharts-legend-item-hidden {
+    opacity: 0.4;
+}
+
+.tab-main__first {
+    text-align: center;
+}
+
+.inactive-link {
+    pointer-events: none;
+}
+
+.tab-main__first .tab__first__heading {
+    display: inline-block;
+}
+
+
+/* start css for Intelli trak and child component*/
+
+.breadcumb {
+    border-bottom: 1px solid #acafb4;
+    font-size: 13px;
+    font-family: arial;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 3px;
+}
+
+.rowNoMargin {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.copyright {
+    margin-top: 40px;
+    color: #999F9F;
+    font-size: 12px;
+}
+
+.highcharts-title {
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+
+/* end css for Intelli trak & child component*/
+
+
+/* no data found css */
+
+.no-data {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: indianred;
+}
+
+
+/* block title font and numbers font */
+
+.block_title {
+    font-family: forza-medium !important;
+}
+
+.numeric_font {
+    font-family: forza-light !important;
+    font-weight: normal;
+}
+
+/* tooltip customize */
+.has-tooltip + .tooltip > .tooltip-inner {
+    background-color: #008998 !important;
+    max-width: none !important;
+    text-align: left !important;
+}
+
+.has-tooltip + .tooltip > .tooltip-arrow {
+    border-top-color: #008998 !important;
+}
+
+.summary-content .tooltip{
+    width: 16.66666667% !important;
+}
+
+/* [hidden] attribute css */
+[hidden]{
+    display: none !important;
+}
+
+/* font-related */
+.font-weight-normal{
+    font-weight: normal;
+}
+
+/* padding and margin related */
+
+.no-pad{
+    padding: 0;
+}
+
+.no-h-pad{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-h-margin{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.xyz{
+    font-size: 20px !important;
+    min-width: 210px !important;
+}
+
+.reports-download {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid #acafb4;
+}
+
+.reports-download .icons {
+  margin-left: 8px;
+  color: #666;
+  cursor: pointer;
+}

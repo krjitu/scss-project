@@ -1,0 +1,110 @@
+//importing reequired sass files
+@import "base";
+@import "fonts";
+
+// ==== main csss start ====
+// converting list variables into classes accordingly
+
+//for padding, margin & border classes
+@each $key, $val in $elem-sides{
+  @if $key == all {
+    .no-pad{
+      @include pad(0);
+    }
+    .no-mar{
+      @include mar(0);
+    }
+    .no-border{
+      @include border(0);
+    }
+  } @else {
+   .no-pad-#{$key}{
+      @include pad(0, $key);
+    }
+    .no-mar-#{$key}{
+      @include mar(0, $key);
+    }
+    .no-border-#{$key}{
+      @include border(0, $key);
+    }
+  }
+  @each $size in $pad-mar-values{
+    @if $key == all {
+      .pad-#{$size}{
+        @include pad($size);
+      }
+      .mar-#{$size}{
+        @include mar($size);
+      }
+    } @else {
+      .pad-#{$size}-#{$key}{
+        @include pad($size, $key);
+      }
+      .mar-#{$size}-#{$key}{
+        @include mar($size, $key);
+      }
+    }
+  }
+@each $size in $base-values{
+  @if $key == all {
+    .border-#{$size}{
+      @include border($size);
+    }
+  } @else {
+    .border-#{$size}-#{$key}{
+      @include border($size, $key);
+    }
+  }
+}
+}
+//for min and max width/height of 0 & 1px
+@each $base in $base-values{
+  .min-w-#{$base}{
+    @include min-w($base);
+  }
+  .max-w-#{$base}{
+    @include max-w($base);
+  }
+  .min-h-#{$base}{
+    @include min-h($base);
+  }
+  .max-h-#{$base}{
+    @include max-h($base);
+  }
+}
+//for width and height in percentage
+@each $key, $val in $percentage-values{
+  .width-#{$key}{
+    @include width($val, %);
+  }
+  .height-#{$key}{
+    @include height($val, %);
+  }
+}
+//for justify content of flex containers
+@each $key, $val in $flex-jc-values{
+  .flex-jc-#{$key}{
+    @include flex-jc($val);
+  }
+}
+//for align items of flex containers & align self of flex children
+@each $key, $val in $flex-ai-as-values{
+  .flex-ai-#{$key}{
+    @include flex-ai($val);
+  }
+  .flex-as-#{$key}{
+    @include flex-as($val);
+  }
+}
+//for flex direction of flex containers
+@each $key, $val in $flex-direction-values{
+  .flex-#{$key}{
+    @include flex($val);
+  }
+}
+//for flex wrap of flex containers
+@each $key, $val in $flex-wrap-values{
+  .flex-wrap-#{$key}{
+    @include flex-wrap($val);
+  }
+}

@@ -1,0 +1,91 @@
+/*=imports=*/
+
+@import "../../scss/constants";
+@import "../../scss/mixins";
+@import "scss/config";
+//login component selector(host)
+@include host() {
+    @include height(100, %);
+    @include flex(col);
+    @include flex-ai(stretch);
+}
+
+.main-container {
+    @include flexi($one, $zero);
+}
+
+.login-container {
+    @include max-w($login-container-max-w);
+    @include flexi(1);
+    @include min-h($login-container-min-h);
+    @include height($login-container-min-h);
+    @include bg($login-container-bg-img-path, img);
+    @include border-radius($login-container-border-radius);
+}
+
+.login-header-right-text {
+    @include font($login-header-font, 2.4);
+    @include flex-ai(start);
+    @include flex(col);
+    @include mar(36, t);
+    @include flex-as(start);
+}
+
+.login-header-container {
+    @include flex-basis($zero, %);
+    @include flex-grow($one);
+    @include flex-jc(sb);
+    @include color($login-header-color);
+    @include font($login-header-font, $login-header-font-size);
+}
+
+.login-header-text {
+    @include mar($login-header-text-mar-bottom, b);
+}
+
+.login-form-container {
+    @include flex-basis($zero, %);
+    @include flex-grow($one);
+    @include font-family($login-form-font);
+}
+
+.login-form {
+    @include flex-grow(1);
+    @include font-size($login-form-font-size);
+    /* form-fields & login-btn font inherit */
+    .form-field,
+    .login-btn {
+        @include font-inherit();
+        @include mar($login-form-children-mar-top, t);
+        @include pad(5);
+    }
+    /* form-fields */
+    .form-field {
+        @include border(0);
+        @include border(1, $login-field-border-bottom-color, b);
+        @include color($login-field-color);
+        @include pad($login-field-pad-bottom, b);
+    }
+    /* login-btn */
+    .login-btn {
+        @include max-w($login-btn-max-w, %);
+        @include bg-color($login-primary-color);
+        @include color($login-btn-color);
+        @include border(1, $transparent-color);
+        @include custom() {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.login-err-container {
+    @include border(1, $login-err-color);
+    @include color($login-err-color);
+    /* login-err-msg */
+    .login-err-msg {
+        @include font-size($login-err-msg-font-size);
+        @include font-weight($login-err-msg-font-weight);
+    }
+}
+
+@import "scss/responsive";

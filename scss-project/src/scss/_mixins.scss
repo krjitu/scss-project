@@ -1,0 +1,382 @@
+// ==== flex related ====
+//for displaying flex with optional direction
+@mixin flex($direction: row) {
+    display: flex;
+    @if ($direction==col) {
+        flex-direction: column;
+    }
+    @else if ($direction==row-r) {
+        flex-direction: row-reverse;
+    }
+    @else if ($direction==col-r) {
+        flex-direction: column-reverse;
+    }
+    @else {
+        flex-direction: $direction;
+    }
+}
+
+//for justify-content on flex conatiners
+@mixin flex-jc($arg: start) {
+    @if ($arg==start) {
+        justify-content: flex-start;
+    }
+    @else if ($arg==end) {
+        justify-content: flex-end;
+    }
+    @else if ($arg==sb) {
+        justify-content: space-between;
+    }
+    @else if ($arg==sa) {
+        justify-content: space-around;
+    }
+    @else {
+        justify-content: $arg;
+    }
+}
+
+//for align-items on flex conatiners
+@mixin flex-ai($arg: stretch) {
+    @if ($arg==start) {
+        align-items: flex-start;
+    }
+    @else if ($arg==end) {
+        align-items: flex-end;
+    }
+    @else if ($arg==base) {
+        align-items: baseline;
+    }
+    @else {
+        align-items: $arg;
+    }
+}
+
+//for align-self on flex children
+@mixin flex-as($arg: start){
+  @if ($arg == start) {
+    align-self: flex-start;
+  } @else if ($arg == end) {
+    align-self: flex-end;
+  } @else if ($arg == base) {
+    align-self: baseline;
+  } @else {
+    align-self: $arg;
+  }
+}
+
+//for flex-wrap on flex conatiners
+@mixin flex-wrap($arg: w) {
+    @if ($arg==w) {
+        flex-wrap: wrap;
+    }
+    @else if ($arg==wr) {
+        flex-wrap: wrap-reverse;
+    }
+    @else if ($arg==n) {
+        flex-wrap: nowrap;
+    }
+    @else {
+        flex-wrap: $arg;
+    }
+}
+
+//for flex-grow/ flex-shrink & flex-basis
+@mixin flex-grow($val) {
+    flex-grow: #{$val};
+}
+
+@mixin flex-shrink($val) {
+    flex-shrink: #{$val};
+}
+
+@mixin flex-basis($val, $unit: px) {
+    flex-basis: #{$val}#{$unit};
+}
+
+//for combined flex property
+@mixin flexi($grow, $shrink:0, $basis: auto) {
+    flex: $grow $shrink $basis;
+}
+
+// ==== margin, padding & border related ====
+//for padding
+@mixin pad($size, $side: all, $unit: px) {
+    @if ($side==all) {
+        padding: #{$size}px;
+    }
+    @else {
+        @if $side==v {
+            @include pad($size, t, $unit);
+            @include pad($size, b, $unit);
+        }
+        @else if $side==h {
+            @include pad($size, l, $unit);
+            @include pad($size, r, $unit);
+        }
+        @else if $side==t {
+            padding-top: #{$size}#{$unit};
+        }
+        @else if $side==r {
+            padding-right: #{$size}#{$unit};
+        }
+        @else if $side==b {
+            padding-bottom: #{$size}#{$unit};
+        }
+        @else if $side==l {
+            padding-left: #{$size}#{$unit};
+        }
+    }
+}
+
+//for margin
+@mixin mar($size, $side: all, $unit: px) {
+    @if ($side==all) {
+        margin: #{$size}px;
+    }
+    @else {
+        @if $side==v {
+            @include mar($size, t, $unit);
+            @include mar($size, b, $unit);
+        }
+        @else if $side==h {
+            @include mar($size, l, $unit);
+            @include mar($size, r, $unit);
+        }
+        @else if $side==t {
+            margin-top: #{$size}#{$unit};
+        }
+        @else if $side==r {
+            margin-right: #{$size}#{$unit};
+        }
+        @else if $side==b {
+            margin-bottom: #{$size}#{$unit};
+        }
+        @else if $side==l {
+            margin-left: #{$size}#{$unit};
+        }
+    }
+}
+
+//for border
+@mixin border($size, $color: #000, $side: all) {
+    @if ($side==all) {
+        border: #{$size}px solid #{$color};
+    }
+    @else {
+        @if $side==v {
+            @include border($size, t, $color);
+            @include border($size, b, $color);
+        }
+        @else if $side==h {
+            @include border($size, l, $color);
+            @include border($size, r, $color);
+        }
+        @else if $side==t {
+            border-top: #{$size}px solid #{$color};
+        }
+        @else if $side==r {
+            border-right: #{$size}px solid #{$color};
+        }
+        @else if $side==b {
+            border-bottom: #{$size}px solid #{$color};
+        }
+        @else if $side==l {
+            border-left: #{$size}px solid #{$color};
+        }
+    }
+}
+
+//for width/height
+@mixin width($width, $unit: px) {
+    width: #{$width}#{$unit};
+}
+
+@mixin height($height, $unit: px) {
+    height: #{$height}#{$unit};
+}
+
+//for min & max width/height
+@mixin min-w($width, $unit: px) {
+    min-width: #{$width}#{$unit};
+}
+
+@mixin max-w($width, $unit: px) {
+    max-width: #{$width}#{$unit};
+}
+
+@mixin min-h($height, $unit: px) {
+    min-height: #{$height}#{$unit};
+}
+
+@mixin max-h($height, $unit: px) {
+    max-height: #{$height}#{$unit};
+}
+
+//for background
+@mixin bg($source, $type: color) {
+    @if ($type==color) {
+        background: $source;
+    }
+    @else if ($type==img or $type==image) {
+        background: url($source);
+    }
+    @else {
+        background: $source;
+    }
+}
+
+//for background image specific
+@mixin bg-img($source) {
+    background-image: url($source);
+}
+
+//for background color specific
+@mixin bg-color($color) {
+    background-color: $color;
+}
+
+//for color
+@mixin color($color) {
+    color: $color;
+}
+
+//for border radius
+@mixin border-radius($size, $side: all, $unit: px) {
+    @if ($side==all) {
+        border-radius: #{$size}#{$unit};
+    }
+    @else {
+        @if $side==tl {
+            border-top-left-radius: #{$size}#{$unit};
+        }
+        @else if $side==tr {
+            border-top-right-radius: #{$size}#{$unit};
+        }
+        @else if $side==bl {
+            border-bottom-left-radius: #{$size}#{$unit};
+        }
+        @else if $side==br {
+            border-bottom-right-radius: #{$size}#{$unit};
+        }
+        @else if $side==t {
+            @include border-radius($size, tl, $unit);
+            @include border-radius($size, tr, $unit);
+        }
+        @else if $side==r {
+            @include border-radius($size, tr, $unit);
+            @include border-radius($size, br, $unit);
+        }
+        @else if $side==b {
+            @include border-radius($size, bl, $unit);
+            @include border-radius($size, br, $unit);
+        }
+        @else if $side==l {
+            @include border-radius($size, tl, $unit);
+            @include border-radius($size, bl, $unit);
+        }
+        @else if $side==fdiag {
+            @include border-radius($size, tr, $unit);
+            @include border-radius($size, bl, $unit);
+        }
+        @else if $side==bdiag {
+            @include border-radius($size, tl, $unit);
+            @include border-radius($size, br, $unit);
+        }
+    }
+}
+
+//for pseudo class
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+//for truncating text elements
+@mixin truncate($boundary) {
+    max-width: $boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//for font-face declarations
+@mixin font-face($name, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: $name;
+        font-style: $style;
+        font-weight: $weight;
+        @content;
+    }
+}
+
+//for setting all font options
+@mixin font($name, $size, $unit: rem, $weight: 300) {
+    font-family: $name;
+    font-size: $size + $unit;
+    font-weight: $weight;
+}
+
+//for inheriting font (form fields doesn't inherit font by default)
+@mixin font-inherit() {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+//for setting font-family
+@mixin font-family($name) {
+    font-family: $name;
+}
+
+//for setting font-size
+@mixin font-size($size, $unit: rem) {
+    font-size: $size + $unit;
+}
+
+//for setting font-weight
+@mixin font-weight($weight) {
+    font-weight: $weight;
+}
+
+//for bold font
+@mixin bold() {
+    font-weight: bold;
+}
+
+//for custom styling (just inserting content)
+@mixin custom() {
+    @content;
+}
+
+//for host element of component
+@mixin host(){
+  :host{
+    @content;
+  }
+}
+
+//for dot pin on cards
+@mixin dot-pin($color: #000){
+  display: inline-block;
+  background-color: #fff;
+  color: $color;
+  font-size: 1rem;
+  @include border-radius(50, t, %);
+  @include pad(6, h);
+  @include pad(4, v);
+  //include extra content if override
+  @content;
+}
+
+//for dropdown menu override
+@mixin dropdown-menu($placement: l){
+  .dropdown-menu{
+    @if ($placement == l){
+      left: 0;
+    } @else if($placement == r){
+      right: 0;
+    }
+    @content;
+  }
+  
+}

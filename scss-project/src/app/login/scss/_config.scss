@@ -1,0 +1,44 @@
+/* login component variables used */
+
+//login fields border bottom color
+$login-primary-color: #008998;
+//login error color
+$login-err-color: indianred;
+//login-container max width
+$login-container-max-w: 380;
+//login-container min height
+$login-container-min-h: 500;
+//login-container background image path
+$login-container-bg-img-path: "../../assets/images/loginBg.png";
+//login-container border-radius
+$login-container-border-radius: 5;
+//login-header color
+$login-header-color: #fff;
+//login-header-text bottom margin
+$login-header-text-mar-bottom: 40;
+//login-header font
+$login-header-font: forza-book;
+//login-header font size(in rem)
+$login-header-font-size: 3.6;
+//login-form font
+$login-form-font: aaux-pro;
+//login-form font size(in rem)
+$login-form-font-size: 1.8;
+//login fields color
+$login-field-color: #36424a;
+//login fields border bottom color alpha value
+$login-field-border-bottom-color-alpha: 0.3;
+//login fields border bottom color
+$login-field-border-bottom-color: rgba($login-primary-color, $login-field-border-bottom-color-alpha);
+//login-fields bottom padding
+$login-field-pad-bottom: 4;
+//login-form-fields margin-top
+$login-form-children-mar-top: 24;
+//login-btn max width (in percentage)
+$login-btn-max-w: 50;
+//login-btn color
+$login-btn-color: #e7f4f5;
+//login-err-msg font size (in rem)
+$login-err-msg-font-size: 1.2;
+//login-err-msg font weight
+$login-err-msg-font-weight: 600;
